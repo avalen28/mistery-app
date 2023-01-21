@@ -6,4 +6,9 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Winnipeg team' });
 });
 
+/* GET Sign Up */
+router.get('/signup', function (req, res, next) {
+  res.render('auth/signup');
+});
+
 module.exports = router;
