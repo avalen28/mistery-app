@@ -1,0 +1,37 @@
+<h1>Create a new pet</h1>
+<form action="/pets/create" method="post">
+  <label>New Pet:</label>
+  <input type="text" name="name" placeholder="Pet's name" />
+  <br />
+  <label>Gender:</label>
+  <input type="text" name="gender" />
+  <br />
+  <label>Age:</label>
+  <input type="number" name="age" required />
+  <br />
+  <label>Type:</label>
+  <input type="text" name="type" placeholder="German Shepard, Shiba Inu, European Cat..." required />
+  <br />
+  <label>Image:</label>
+  <input type="text" name="image" />
+  <br />
+    <label>Needs Medicine?:</label>
+  <input type="boolean" name="needsMedicine" />
+  <br />
+      <label>Needs Medicine?:</label>
+  <input type="boolean" name="needsMedicine" />
+  <br />
+  <select name="owner" multiple>
+    {{#each owner}}
+      <option value="{{_id}}">{{name}}</option>
+    {{/each}}
+  </select>
+  <button type="submit">Submit!</button>
+</form>
+
+
+
+
+
+
+
