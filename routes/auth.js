@@ -29,7 +29,7 @@ router.post("/signup", async function (req, res, next) {
     country,
     role,
   } = req.body;
-  if (!username || !email || !password) {
+  if (!username || !email || !password || !firstname || !lastname || !phone || !city || !country) {
     res.render("auth/signup", { error: "All fields are necessary." });
     return;
   }
@@ -42,10 +42,9 @@ router.post("/signup", async function (req, res, next) {
       return;
     } else {
       const salt = await bcrypt.genSalt(saltRounds);
-      // const salt = bcrypt.genSaltSync(saltRounds);
       const hashedPassword = await bcrypt.hash(password, salt);
-      const user = await User.create({ username, email, hashedPassword, role });
-      res.render("auth/profile", user);
+      const user = await User.create({ firstName, lastName, email, hashedPassword, username, phone, city, country, role});
+      res.json(user);
     }
   } catch (error) {
     next(error);
