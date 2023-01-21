@@ -11,4 +11,10 @@ router.get('/signup', function (req, res, next) {
   res.render('auth/signup');
 });
 
+/* GET Login */
+
+router.get('/login', function (req, res, next) {
+  res.render('auth/login');
+});
+
 module.exports = router;
