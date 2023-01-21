@@ -17,7 +17,6 @@ router.get("/logout", (req, res, next) => {
 });
 
 // POST Sign up
-
 router.post("/signup", async function (req, res, next) {
   const {
     firstname,
@@ -87,6 +86,11 @@ router.post("/login", async function (req, res, next) {
   } catch (error) {
     next(error);
   }
+});
+
+/* GET Login */
+router.get("/login", function (req, res, next) {
+  res.render("auth/login");
 });
 
 module.exports = router;
