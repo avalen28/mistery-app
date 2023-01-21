@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require ("bcryptjs")
+const bcrypt = require ("bcryptjs");
 const saltRounds = 6;
 
 const User = require("../models/User")
@@ -44,3 +44,9 @@ router.post('/signup', async function (req, res, next) {
     next(error)
   }
 });
+/* GET Sign Up */
+router.get('/signup', function (req, res, next) {
+  res.render('auth/signup');
+});
+
+module.exports = router;
