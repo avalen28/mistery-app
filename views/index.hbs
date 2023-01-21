@@ -1,2 +1,17 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="index">
+<img src="https://img.freepik.com/premium-vector/pet-care-logo-mascot-template_190190-163.jpg" alt="petcare logo">
+ {{#if user}}
+      {{else}}    
+      <form method="POST" action="/auth/login">
+  <label>Introduce username</label>
+  <input type="text" name="username" placeholder="username" required="true"/>
+  <label>Password</label>
+  <input type="password" name="password" placeholder="*********" required="true"/>
+  <button type="submit">Log in!</button>
+  <a href="/auth/signup">Not registered yet? Sign up!</a>
+  {{#if error}}
+    <p style="color: red">{{error}}</p>
+  {{/if}}
+</form>
+      {{/if}}
+</div>
