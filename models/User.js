@@ -4,12 +4,10 @@ const { Schema } = mongoose;
 const userSchema = new Schema({
   firstName: {
     type: String,
-    required: [true, 'Please add a name'],
     trim: true,
   },
   lastName: {
     type: String,
-    required: [true, 'Please add a last name'],
     trim: true,
   },
   email: {
@@ -32,18 +30,15 @@ const userSchema = new Schema({
   },
   phone: {
     type: Number,
-    required: [true, 'Please add phone number'],
     unique: true,
     trim: true,
   },
   city: {
     type: String,
-    required: [true, 'Please add a name'],
     trim: true,
   },
   country: {
     type: String,
-    required: [true, 'Please add a name'],
     trim: true,
   },
   role:{
@@ -53,7 +48,8 @@ const userSchema = new Schema({
         message:'That is not a valid role'
     },
     default: 'onwer'
-  }
+  },
+  required:true,
 },
   {
     timestamps: true
