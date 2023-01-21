@@ -16,8 +16,6 @@ router.get("/logout", (req, res, next) => {
   });
 });
 
-module.exports = router;
-
 // POST Sign up
 
 router.post("/signup", async function (req, res, next) {
