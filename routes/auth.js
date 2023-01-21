@@ -22,7 +22,7 @@ router.post("/signup", async function (req, res, next) {
     firstname,
     lastname,
     email,
-    hashedPassword,
+    password,
     username,
     phone,
     city,
